@@ -1,0 +1,59 @@
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+on_event = 'InsertEnter'
+depends = ['denops.vim']
+hook_source = '''
+  call ddc#custom#patch_global('sources', ['nvim-lsp', 'around'])
+  call ddc#custom#patch_global('sourceOptions', {
+        \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank']},
+        \ 'around': {
+        \   'mark': 'around' },
+        \ 'nvim-lsp': {
+        \   'mark': 'lsp',
+        \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
+        \ })
+  call ddc#enable()
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+hook_add = '''
+source ~/.config/nvim/plugins/rust.rc.vim
+'''
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+on_event = 'BufEnter'
+hook_source= '''
+lua << EOF
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  server:setup(opts)
+end)
+EOF
+'''
+
+[[plugins]]
+repo = 'williamboman/nvim-lsp-installer'
+on_source = 'nvim-lspconfig'
+
