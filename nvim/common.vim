@@ -2,6 +2,7 @@
 " ---- General ----
 "
 set number
+highlight lineNr ctermfg=white
 set showmatch
 
 "
