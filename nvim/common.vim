@@ -4,6 +4,7 @@
 set number
 highlight lineNr ctermfg=white
 set showmatch
+set noswapfile
 
 "
 "---- Tab, Space ----
@@ -24,4 +25,3 @@ set hlsearch
 "
 set cursorline
 highlight CursorLine term=NONE cterm=NONE ctermfg=NONE ctermbg=darkgray
-
