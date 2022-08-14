@@ -183,6 +183,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        height 32
 }
 
 #
@@ -193,8 +194,9 @@ for_window [class="gnome-control-center"] floating enable
 #
 # gaps
 #
-gaps inner 32
+gaps inner 24
 gaps horizontal 40
+gaps top 32
 default_border none
 
 #
@@ -206,3 +208,4 @@ exec --no-startup-id ~/.fehbg
 # auto start
 #
 exec --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backends
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
