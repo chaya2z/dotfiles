@@ -3,6 +3,7 @@ venv
 .idea
 .git
 .gitignore
+.dotignore
 LICENSE
 README.md
 script.py
