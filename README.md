@@ -7,14 +7,20 @@ My dotfiles and script. Script can easily manage dotfiles.
 1. Clone this repo.\
    ( Example, `~/.local/share/` )
 
-2. Run `script.py`
+2. Create/Copy config files or directories you want to manage this repo.
+
+```shell
+sudo cp /etc/i3 .
+```
+
+3. Run `script.py`
 
 ```shell
 chmod +x script.py
 ./script.py link
 ```
 
-## Usage
+## Command Usage
 
 ```shell
 ./script.py [COMMAND] [FILE]
@@ -26,13 +32,13 @@ chmod +x script.py
 
 ### Examples
 
-remove symlinks
+Use `unlink` command to remove symlinks.
 
 ```shell
 ./script.py unlink
 ```
 
-choose target
+You can choose targets.
 
 ```shell
 ./script.py link i3 i3status polybar
