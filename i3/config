@@ -223,6 +223,7 @@ exec --no-startup-id ~/.fehbg
 #
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id fcitx5 -d
 
 #
 # key bind
