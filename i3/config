@@ -203,6 +203,7 @@ bar {
 # floating window
 #
 for_window [class="gnome-control-center"] floating enable
+for_window [class="Thunar"] floating enable
 
 #
 # gaps
